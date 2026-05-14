@@ -7,7 +7,6 @@ import {
 } from 'recharts';
 import { cn } from '@/lib/utils';
 
-// Example Mock Data
 const lineData = [
   { name: 'Mon', kwh: 12 },
   { name: 'Tue', kwh: 14 },
@@ -37,20 +36,20 @@ export function EnergyChart({ type, className, title }: EnergyChartProps) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-slate-700/50 bg-slate-900/90 backdrop-blur-md p-6 shadow-xl flex flex-col",
+        "rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col",
         className
       )}
     >
-      {title && <h3 className="mb-4 text-lg font-semibold text-slate-200">{title}</h3>}
+      {title && <h3 className="mb-4 text-lg font-semibold text-slate-700">{title}</h3>}
       <div className="flex-1 min-h-[250px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           {type === 'line' ? (
             <LineChart data={lineData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
               <XAxis dataKey="name" stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} />
               <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} />
               <Tooltip 
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', color: '#f8fafc', borderRadius: '8px' }}
+                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', color: '#0f172a', borderRadius: '8px' }}
                 itemStyle={{ color: '#10b981' }}
               />
               <Line 
@@ -58,28 +57,19 @@ export function EnergyChart({ type, className, title }: EnergyChartProps) {
                 dataKey="kwh" 
                 stroke="#10b981" 
                 strokeWidth={3}
-                dot={{ r: 4, fill: '#0f172a', stroke: '#10b981', strokeWidth: 2 }}
+                dot={{ r: 4, fill: '#ffffff', stroke: '#10b981', strokeWidth: 2 }}
                 activeDot={{ r: 6, fill: '#10b981' }}
               />
             </LineChart>
           ) : (
             <PieChart>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                innerRadius={60}
-                outerRadius={80}
-                paddingAngle={5}
-                dataKey="value"
-                stroke="none"
-              >
+              <Pie data={pieData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value" stroke="none">
                 {pieData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
               <Tooltip 
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', color: '#f8fafc', borderRadius: '8px' }}
+                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', color: '#0f172a', borderRadius: '8px' }}
                 itemStyle={{ color: '#10b981' }}
               />
             </PieChart>

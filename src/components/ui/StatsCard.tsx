@@ -17,8 +17,8 @@ export function StatsCard({ title, value, icon, subtitle, trend, className }: St
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-slate-700/50",
-        "bg-slate-900/90 backdrop-blur-md p-6 shadow-xl",
+        "relative overflow-hidden rounded-2xl border border-slate-200",
+        "bg-white p-6 shadow-sm",
         className
       )}
     >
@@ -27,28 +27,28 @@ export function StatsCard({ title, value, icon, subtitle, trend, className }: St
       
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-400">{title}</p>
-          <h3 className="mt-2 text-3xl font-bold tracking-tight text-slate-50">{value}</h3>
+          <p className="text-sm font-medium text-slate-500">{title}</p>
+          <h3 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">{value}</h3>
           
           {subtitle && (
-            <p className="mt-1 text-sm text-slate-400">{subtitle}</p>
+            <p className="mt-1 text-sm text-slate-500">{subtitle}</p>
           )}
 
           {trend && (
             <div className="mt-3 flex items-center gap-1.5 text-sm">
               <span className={cn(
                 "flex items-center font-medium",
-                trend.isPositive ? "text-emerald-400" : "text-rose-400"
+                trend.isPositive ? "text-emerald-600" : "text-rose-500"
               )}>
                 {trend.isPositive ? "↓" : "↑"} {Math.abs(trend.value)}%
               </span>
-              <span className="text-slate-500">vs last month</span>
+              <span className="text-slate-400">vs last month</span>
             </div>
           )}
         </div>
         
         {icon && (
-          <div className="rounded-xl bg-slate-800/50 p-3 text-emerald-400 border border-slate-700/50">
+          <div className="rounded-xl bg-emerald-50 p-3 text-emerald-600 border border-emerald-100">
             {icon}
           </div>
         )}

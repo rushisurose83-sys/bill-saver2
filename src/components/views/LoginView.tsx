@@ -13,51 +13,51 @@ export function LoginView({ onLogin }: LoginViewProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="min-h-screen flex items-center justify-center bg-[#020617] p-4 text-slate-50 font-sans"
+      className="min-h-screen flex items-center justify-center bg-slate-50 p-4 text-slate-900 font-sans"
     >
-      <div className="w-full max-w-md bg-emerald-950/20 border border-emerald-500/30 p-8 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-sm">
+      <div className="w-full max-w-md bg-white border border-slate-200 p-8 rounded-2xl shadow-xl relative overflow-hidden">
         {/* Decorative background glow */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/20 blur-[80px] rounded-full pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-cyan-500/5 blur-[80px] rounded-full pointer-events-none" />
 
         <div className="flex flex-col items-center mb-8 relative z-10">
-          <div className="bg-emerald-500/20 p-3 rounded-2xl border border-emerald-500/30 mb-4">
-            <Leaf size={36} className="text-emerald-400" />
+          <div className="bg-emerald-100 p-3 rounded-2xl border border-emerald-200 mb-4">
+            <Leaf size={36} className="text-emerald-600" />
           </div>
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600">
             BillSaver Green
           </h1>
-          <p className="text-slate-400 mt-2 text-sm text-center">
+          <p className="text-slate-500 mt-2 text-sm text-center">
             Sign in to track your energy footprint and save on bills.
           </p>
         </div>
 
         <form className="space-y-5 relative z-10" onSubmit={(e) => { e.preventDefault(); onLogin(); }}>
           <div className="space-y-1">
-            <label className="text-sm font-medium text-emerald-100/80">Email</label>
+            <label className="text-sm font-medium text-slate-700">Email</label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Mail size={18} className="text-slate-500" />
+                <Mail size={18} className="text-slate-400" />
               </div>
               <input 
                 type="email" 
                 placeholder="you@example.com"
-                className="w-full bg-slate-900/50 border border-slate-700 rounded-lg py-2.5 pl-10 pr-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
+                className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 pl-10 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                 required
               />
             </div>
           </div>
 
           <div className="space-y-1">
-            <label className="text-sm font-medium text-emerald-100/80">Password</label>
+            <label className="text-sm font-medium text-slate-700">Password</label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Lock size={18} className="text-slate-500" />
+                <Lock size={18} className="text-slate-400" />
               </div>
               <input 
                 type="password" 
                 placeholder="••••••••"
-                className="w-full bg-slate-900/50 border border-slate-700 rounded-lg py-2.5 pl-10 pr-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
+                className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 pl-10 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                 required
               />
             </div>
@@ -74,15 +74,15 @@ export function LoginView({ onLogin }: LoginViewProps) {
 
         <div className="mt-6 relative z-10">
           <div className="relative flex items-center py-2">
-            <div className="flex-grow border-t border-slate-700"></div>
-            <span className="flex-shrink-0 mx-4 text-slate-500 text-sm">or</span>
-            <div className="flex-grow border-t border-slate-700"></div>
+            <div className="flex-grow border-t border-slate-200"></div>
+            <span className="flex-shrink-0 mx-4 text-slate-400 text-sm">or</span>
+            <div className="flex-grow border-t border-slate-200"></div>
           </div>
 
           <button 
             type="button"
             onClick={onLogin}
-            className="w-full mt-4 flex items-center justify-center gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-medium py-2.5 rounded-lg transition-colors"
+            className="w-full mt-4 flex items-center justify-center gap-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-medium py-2.5 rounded-lg transition-colors"
           >
             <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>

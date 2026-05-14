@@ -66,28 +66,28 @@ export default function Home() {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.4 }}
-      className="min-h-screen bg-[#020617] text-slate-50 p-4 md:p-8 font-sans selection:bg-emerald-500/30"
+      className="min-h-screen bg-white text-slate-900 p-4 md:p-8 font-sans selection:bg-emerald-500/30"
     >
       <div className="max-w-7xl mx-auto space-y-8">
         
         {/* Header */}
-        <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
           <div className="flex items-center gap-3">
             <div className="bg-emerald-500/20 p-2.5 rounded-xl border border-emerald-500/30">
-              <Leaf size={28} className="text-emerald-400" />
+              <Leaf size={28} className="text-emerald-600" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600">
                 BillSaver Green
               </h1>
-              <p className="text-sm text-slate-400">IoT-Ready Energy Analytics Platform</p>
+              <p className="text-sm text-slate-500">IoT-Ready Energy Analytics Platform</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 flex-wrap">
             <button 
               onClick={() => setShowFeedback(true)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800 text-slate-300 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors"
             >
               <MessageSquare size={18} />
               <span className="hidden sm:inline">Feedback</span>
@@ -96,8 +96,8 @@ export default function Home() {
               onClick={handleSync}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${
                 syncing 
-                  ? "bg-slate-800 border-slate-700 text-slate-400" 
-                  : "bg-slate-900 border-emerald-500/50 text-emerald-400 hover:bg-emerald-950/50"
+                  ? "bg-slate-50 border-slate-200 text-slate-400" 
+                  : "bg-white border-emerald-500/50 text-emerald-600 hover:bg-emerald-50"
               }`}
             >
               <Activity size={18} className={syncing ? "animate-spin" : ""} />
@@ -113,7 +113,7 @@ export default function Home() {
             <button 
               onClick={handleLogout}
               title="Sign Out"
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-red-900/50 bg-red-950/30 text-red-400 hover:bg-red-900/50 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-red-200 bg-red-50 text-red-500 hover:bg-red-100 transition-colors"
             >
               <LogOut size={18} />
             </button>
@@ -143,13 +143,13 @@ export default function Home() {
 
           <div className="flex flex-col gap-6 lg:col-span-1">
             <Leaderboard className="flex-1" />
-            <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-6 relative overflow-hidden">
+            <div className="rounded-2xl border border-emerald-500/30 bg-emerald-50 p-6 relative overflow-hidden">
               <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full" />
-              <h3 className="text-lg font-bold text-emerald-300 mb-2">Upgrade to Pro</h3>
-              <p className="text-sm text-emerald-100/70 mb-4">
+              <h3 className="text-lg font-bold text-emerald-700 mb-2">Upgrade to Pro</h3>
+              <p className="text-sm text-emerald-800/70 mb-4">
                 Get advanced AI predictions, automated smart plug control, and detailed appliance-level reporting.
               </p>
-              <button className="w-full py-2 bg-emerald-500 text-slate-950 font-bold rounded-lg hover:bg-emerald-400 transition-colors">
+              <button className="w-full py-2 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-600 transition-colors">
                 Unlock Pro Features
               </button>
             </div>

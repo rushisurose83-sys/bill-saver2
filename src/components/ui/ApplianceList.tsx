@@ -36,10 +36,10 @@ const itemVariants = {
 
 export function ApplianceList({ items, onRemove, className }: ApplianceListProps) {
   return (
-    <div className={cn("rounded-2xl border border-slate-700/50 bg-slate-900/90 backdrop-blur-md p-6 shadow-xl", className)}>
+    <div className={cn("rounded-2xl border border-slate-200 bg-white p-6 shadow-sm", className)}>
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-slate-200">Active Appliances</h3>
-        <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
+        <h3 className="text-lg font-semibold text-slate-700">Active Appliances</h3>
+        <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-600">
           {items.length} Tracked
         </span>
       </div>
@@ -58,19 +58,19 @@ export function ApplianceList({ items, onRemove, className }: ApplianceListProps
               key={item.id}
               variants={itemVariants}
               className={cn(
-                "flex items-center justify-between rounded-xl border border-slate-700/30 p-3",
-                item.phantomLoad ? "bg-rose-950/30 border-rose-900/50" : "bg-slate-800/40"
+                "flex items-center justify-between rounded-xl border p-3",
+                item.phantomLoad ? "bg-rose-50 border-rose-200" : "bg-slate-50 border-slate-200"
               )}
             >
               <div className="flex items-center gap-3">
                 <div className={cn(
                   "rounded-lg p-2",
-                  item.phantomLoad ? "bg-rose-500/20 text-rose-400" : "bg-emerald-500/20 text-emerald-400"
+                  item.phantomLoad ? "bg-rose-100 text-rose-500" : "bg-emerald-100 text-emerald-600"
                 )}>
                   {item.phantomLoad ? <Power size={18} /> : <Zap size={18} />}
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-200">{item.name}</p>
+                  <p className="text-sm font-medium text-slate-700">{item.name}</p>
                   <p className="text-xs text-slate-400">{item.powerWatts}W • {item.hoursPerDay}h/day</p>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export function ApplianceList({ items, onRemove, className }: ApplianceListProps
               {onRemove && (
                 <button 
                   onClick={() => onRemove(item.id)}
-                  className="text-slate-500 hover:text-rose-400 transition-colors p-2"
+                  className="text-slate-400 hover:text-rose-500 transition-colors p-2"
                 >
                   <span className="sr-only">Remove</span>
                   &times;
